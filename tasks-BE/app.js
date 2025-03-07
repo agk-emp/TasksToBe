@@ -10,7 +10,7 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerJsDoc = require("swagger-jsdoc");
 const swaggerDocument = require('./swagger.json');
 require("dotenv").config();
-const port = process.env.PORT;
+const port = process.env.PORT || 3000; // Default to 3000 if PORT is undefined
 const fileStorage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, 'images');
